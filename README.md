@@ -1,0 +1,1 @@
+This repository/playground are currently entirely copied from: https://github.com/telmogoncalves/telmo for the current moment!
