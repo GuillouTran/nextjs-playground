@@ -1,7 +1,7 @@
 {
-  "name": "telmo",
-  "version": "1.0.0",
-  "description": "A tale of code & design",
+  "name": "guilloutran.com",
+  "version": "0.1.0",
+  "description": "Official source code for my personal website/blog, GuillouTran!",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -9,8 +9,8 @@
     "start": "next start",
     "build:static": "next build && next export"
   },
-  "author": "Telmo Goncalves <@telmo>",
-  "license": "ISC",
+  "author": "Nghia Guillou <@guilloutran>",
+  "license": "MIT",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
