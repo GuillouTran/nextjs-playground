@@ -3,8 +3,9 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Row, Col } from 'react-flexbox-grid'
-
+import Unsplash from '../components/metrics/Unsplash'
 import Layout from '../components/Layout'
+import TopTracks from '../components/TopTracks';
 
 function formatDate(date) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -50,6 +51,8 @@ function Homepage({ writings }) {
             )
           })}
         </Row>
+        <Unsplash />
+        <TopTracks />
       </Layout>
     </>
   )

@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:site" content="@telmo" />
         <meta property="og:image" content={og ? og.image : `https://telmo.im/og/default.png`} />
 
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
         <title>{title || `GuillouTran: code & opinion`}</title>
       </Head>
