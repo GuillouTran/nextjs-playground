@@ -11,6 +11,10 @@ const menu = [
     name: 'start',
   },
   {
+    path: '/blog',
+    name: 'blog',
+  },
+  {
     path: '/about',
     name: 'about',
   },
@@ -20,11 +24,11 @@ const menu = [
   },
   {
     path: '/reviews',
-    name: 'Reviews',
+    name: 'reviews',
   },
 ]
 
-function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
+function Layout({ children, isBlog, secondaryPage, noHead = false }) {
   const onLoadTheme = typeof localStorage !== 'undefined' && localStorage.getItem('BLOG_THEME')
   const [theme, setTheme] = useState(onLoadTheme)
   const [mounted, setMounted] = useState(false)
@@ -51,8 +55,8 @@ function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
   }, [theme])
 
   const containerProps = {
-    ...isHomepage && { md: 12 },
-    ...!isHomepage && { md: 8, mdOffset: 2 },
+    ...isBlog && { md: 12 },
+    ...!isBlog && { md: 8, mdOffset: 2 },
   }
 
   if (!mounted) return <div />
@@ -91,8 +95,8 @@ function Layout({ children, isHomepage, secondaryPage, noHead = false }) {
         <Row>
           <Col {...containerProps}>
             {!secondaryPage && (
-              <h1 className={`blog-title`} style={isHomepage && { textAlign: 'left' }}>
-                Telmo, code <span className="amp">&</span> design
+              <h1 className={`blog-title`} style={isBlog && { textAlign: 'left' }}>
+                Guilloutran, code <span className="amp">&</span> things!
               </h1>
             )}
 

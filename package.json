@@ -34,7 +34,7 @@
     "react-scroll-progress-bar": "^1.1.12",
     "react-syntax-highlighter": "^13.0.0",
     "react-text-transition": "^1.0.2",
-    "simple-icons": "^3.0.0",
+    "simple-icons": "^3.5.0",
     "swr": "^0.3.0",
     "unsplash-js": "^6.0.0"
   }
