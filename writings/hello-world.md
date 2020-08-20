@@ -1,6 +1,6 @@
 ---
-title: "Dark and light mode with CSS and JavaScript"
-date: "2020-04-22"
+title: "Hello World!"
+date: "2020-08-20"
 og:
   description: "Implement dark mode with only CSS and JavaScript"
   image: "https://telmo.im/og/darkmodecssjs.png"
