@@ -1,15 +1,15 @@
-import React from 'react';
-import useSWR from 'swr';
 import {
   Box,
-  Link,
-  Stack,
-  Image,
-  Text,
   Icon,
+  Image,
+  Link,
   Skeleton,
+  Stack,
+  Text,
   useColorMode
 } from '@chakra-ui/core';
+import React from 'react';
+import useSWR from 'swr';
 
 import fetcher from '../lib/fetcher';
 
