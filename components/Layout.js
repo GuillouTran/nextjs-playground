@@ -1,65 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import { Sun, Moon } from 'react-feather'
-import Link from 'next/link'
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { Moon, Sun } from "react-feather";
+import { Col, Grid, Row } from "react-flexbox-grid";
 
-import { currentDayName } from '../utils/dateUtils'
+import { currentDayName } from "../utils/dateUtils";
 
 const menu = [
   {
-    path: '/',
-    name: 'dash',
+    path: "/",
+    name: "dash",
   },
   {
-    path: '/blog',
-    name: 'blog',
+    path: "/blog",
+    name: "blog",
   },
   {
-    path: '/about',
-    name: 'about',
+    path: "/about",
+    name: "about",
   },
   {
-    path: '/uses',
-    name: 'uses',
+    path: "/uses",
+    name: "uses",
   },
   {
-    path: '/reviews',
-    name: 'reviews',
+    path: "/reviews",
+    name: "reviews",
   },
-]
+];
 
 function Layout({ children, isBlog, secondaryPage, noHead = false }) {
-  const onLoadTheme = typeof localStorage !== 'undefined' && localStorage.getItem('BLOG_THEME')
-  const [theme, setTheme] = useState(onLoadTheme)
-  const [mounted, setMounted] = useState(false)
+  const onLoadTheme =
+    typeof localStorage !== "undefined" && localStorage.getItem("BLOG_THEME");
+  const [theme, setTheme] = useState(onLoadTheme);
+  const [mounted, setMounted] = useState(false);
   const switchTheme = () => {
-    const setTo = theme === 'dark' ? 'light' : 'dark'
+    const setTo = theme === "dark" ? "light" : "dark";
 
-    setTheme(setTo)
-  }
+    setTheme(setTo);
+  };
 
   useEffect(() => {
-    if (onLoadTheme) return
+    if (onLoadTheme) return;
 
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme('dark')
+      setTheme("dark");
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.setAttribute("data-theme", theme);
 
-    localStorage.setItem('BLOG_THEME', theme)
+    localStorage.setItem("BLOG_THEME", theme);
 
-    setMounted(true)
-  }, [theme])
+    setMounted(true);
+  }, [theme]);
 
   const containerProps = {
-    ...isBlog && { md: 12 },
-    ...!isBlog && { md: 8, mdOffset: 2 },
-  }
+    ...(isBlog && { md: 12 }),
+    ...(!isBlog && { md: 8, mdOffset: 2 }),
+  };
 
-  if (!mounted) return <div />
+  if (!mounted) return <div />;
 
   return (
     <>
@@ -83,9 +84,12 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
             </ul>
           </Col>
 
-          <Col xs={2} style={{ textAlign: 'right' }}>
-            <button className="theme-switch-button" onClick={() => switchTheme()}>
-              {theme === 'dark' ? <Sun /> : <Moon />}
+          <Col xs={2} style={{ textAlign: "right" }}>
+            <button
+              className="theme-switch-button"
+              onClick={() => switchTheme()}
+            >
+              {theme === "dark" ? <Sun /> : <Moon />}
             </button>
           </Col>
         </Row>
@@ -95,8 +99,11 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
         <Row>
           <Col {...containerProps}>
             {!secondaryPage && (
-              <h1 className={`blog-title`} style={isBlog && { textAlign: 'left' }}>
-                Guilloutran, code <span className="amp">&</span> things!
+              <h1
+                className={`blog-title`}
+                style={isBlog && { textAlign: "left" }}
+              >
+                Guilloutran, code<span className="amp">& </span> things!
               </h1>
             )}
 
@@ -107,10 +114,13 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
 
       <footer>
         <div>No tracking. No ads. Happy {currentDayName()}!</div>
-        <div>&copy; {new Date().getFullYear()}</div>
+        <div>
+          & copy;
+          {new Date().getFullYear()}
+        </div>
       </footer>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
