@@ -1,5 +1,8 @@
 import Head from 'next/head'
-
+import {
+  ThemeProvider,
+} from '@chakra-ui/core';
+import theme from '../styles/theme';
 import '../styles/base.css'
 
 function MyApp({ Component, pageProps }) {
@@ -7,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   const title = pageProps.data?.title
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta property="og:title" content={title || `GuillouTran, code & opinion`} />
@@ -23,7 +26,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 

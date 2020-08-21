@@ -9,9 +9,9 @@ function HomePage() {
       <Layout secondaryPage>
         <br />
         <br />
-        <Unsplash />
-        <TopTracks />
         <NowPlaying />
+        <TopTracks />
+        <Unsplash />
       </Layout>
     </>
   );

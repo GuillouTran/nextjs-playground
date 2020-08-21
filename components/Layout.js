@@ -8,7 +8,7 @@ import { currentDayName } from '../utils/dateUtils'
 const menu = [
   {
     path: '/',
-    name: 'start',
+    name: 'dash',
   },
   {
     path: '/blog',
