@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-flexbox-grid";
+import {Col, Row} from "react-flexbox-grid";
 
 import Layout from "../components/Layout";
 
@@ -10,13 +10,11 @@ function Reviews() {
         <Row>
           <Col md={12}>
             <h1
-              className="main-h1"
-              style={{
-                marginBottom: 50,
-              }}
-            >
-              Pull request reviews
-            </h1>
+  className = "main-h1"
+  style =
+      {{ marginBottom: 50, }} >
+      Pull request reviews<
+          /h1>
 
             <p className="reviews-description">
               I get a lot of messages on Twitter asking for help. Most of the
@@ -24,19 +22,19 @@ function Reviews() {
               impossible to debug the code, it's not at all the right way of
               asking for help.
               <br />
-              <br />
-              So, I'll be spending some time after work reviewing your pull
-              requests, I'll only review <b>HTML</b>, <b>CSS</b>,{" "}
-              <b>JavaScript</b> and <b>ReactJS</b>.
-              <br />
-              <br />
-              <h3 className="reviews-what-to-do">What do you need to do?</h3>
+      <br />So,
+  I'll be spending some time after work reviewing your pull requests,
+  I'll only review <b>HTML</b>, <b>CSS</b>,{" "} <b>
+      JavaScript</b> and <b>ReactJS</b>.<br /><br />
+      <h3 className = "reviews-what-to-do">What do you need to do
+      ? < /h3>
               <ul className="reviews-list">
                 <li>
                   <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
+                    href="https:/ /
+                github.com "
+  target = "_blank"
+  rel="noopener noreferrer nofollow"
                   >
                     GitHub
                   </a>
@@ -53,34 +51,35 @@ function Reviews() {
                   <span className="point">Repository </span>
                   If the repository is private you'll need to add{" "}
                   <a
-                    href="https:/ /
-          github.com /
-          telmogoncalves
-          "
-                    style={{ display: "inline", margin: 0 }}
-                    target="_blank "
-                    rel=" noopener
-              noreferrer nofollow "
-                  >
-                    my account
-                  </a>{" "}
+  href = "https:/ /
+  github.com / telmogoncalves
+  "
+  style = {
+    { display: "inline", margin: 0 }
+  } target = "_blank "
+  rel = " noopener
+  noreferrer nofollow "
+      > my account<
+            /a>{" "}
                   as a collaborator .
                 </li>
 
-                <li>
-                  <span className="point">Pull Requests</span>Open a pull
+      <li><span className = "point">Pull Requests<
+          /span>Open a pull
                   request and assign it to me so I get notified.Try to keep pull
                   requests short and straight to the point.
                 </li>
 
-                <li>
-                  <span className="point">Timings</span>Keep in mind I might not
+      <li><span className = "point">Timings <
+      /span>Keep in mind I might not
                   review pull requests every single day, although if you see
                   that I'm taking too long drop me a message on{" "}
                   <a
-                    href="https://twitter.com/telmo"
-                    style={{ display: "inline", margin: 0 }}
-                    target="_blank"
+                    href="https:/ /
+          twitter.com / telmo "
+  style = {
+    { display: "inline", margin: 0 }
+  } target = "_blank"
                     rel="noopener noreferrer nofollow"
                   >
                     Twitter
@@ -114,10 +113,10 @@ function Reviews() {
 
 Reviews.getInitialProps = () => {
   return {
-    data: {
-      og: {
-        description: "Need feedback on a pull request?",
-        image: "https://telmo.im/og/reviews.png",
+    data : {
+      og : {
+        description : "Need feedback on a pull request?",
+        image : "https://telmo.im/og/reviews.png",
       },
     },
   };

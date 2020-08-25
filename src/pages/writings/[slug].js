@@ -7,10 +7,12 @@ import ProgressBar from "react-scroll-progress-bar";
 import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
 
-function Writing({ content, data }) {
+function Writing({content, data}) {
   const frontmatter = data;
-  const { title, author } = frontmatter;
-  const avatar = `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${author.twitter}&w=40`;
+  const {title, author} = frontmatter;
+  const avatar =
+      `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${
+          author.twitter}&w=40`;
 
   return (
     <>
@@ -27,7 +29,8 @@ function Writing({ content, data }) {
 
           <div className="author">
             <a
-              href={`https://twitter.com/${author.twitter}`}
+              href={`https://twitter.com/${
+    author.twitter}`}
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
