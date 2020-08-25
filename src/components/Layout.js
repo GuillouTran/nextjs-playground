@@ -101,7 +101,11 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
             {!secondaryPage && (
               <h1
                 className={`blog-title`}
-                style={isBlog && { textAlign: "left" }}
+                style={
+                  isBlog && {
+                    textAlign: "left",
+                  }
+                }
               >
                 Guilloutran, code<span className="amp">& </span> things!
               </h1>
