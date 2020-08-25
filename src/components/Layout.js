@@ -1,36 +1,36 @@
 import Link from "next/link";
-import React, {useEffect, useState} from "react";
-import {Moon, Sun} from "react-feather";
-import {Col, Grid, Row} from "react-flexbox-grid";
+import React, { useEffect, useState } from "react";
+import { Moon, Sun } from "react-feather";
+import { Col, Grid, Row } from "react-flexbox-grid";
 
-import {currentDayName} from "../utils/dateUtils";
+import { currentDayName } from "../utils/dateUtils";
 
 const menu = [
   {
-    path : "/",
-    name : "dash",
+    path: "/",
+    name: "dash",
   },
   {
-    path : "/blog",
-    name : "blog",
+    path: "/blog",
+    name: "blog",
   },
   {
-    path : "/about",
-    name : "about",
+    path: "/about",
+    name: "about",
   },
   {
-    path : "/uses",
-    name : "uses",
+    path: "/uses",
+    name: "uses",
   },
   {
-    path : "/reviews",
-    name : "reviews",
+    path: "/reviews",
+    name: "reviews",
   },
 ];
 
-function Layout({children, isBlog, secondaryPage, noHead = false}) {
+function Layout({ children, isBlog, secondaryPage, noHead = false }) {
   const onLoadTheme =
-      typeof localStorage !== "undefined" && localStorage.getItem("BLOG_THEME");
+    typeof localStorage !== "undefined" && localStorage.getItem("BLOG_THEME");
   const [theme, setTheme] = useState(onLoadTheme);
   const [mounted, setMounted] = useState(false);
   const switchTheme = () => {
@@ -40,8 +40,7 @@ function Layout({children, isBlog, secondaryPage, noHead = false}) {
   };
 
   useEffect(() => {
-    if (onLoadTheme)
-      return;
+    if (onLoadTheme) return;
 
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
@@ -54,15 +53,14 @@ function Layout({children, isBlog, secondaryPage, noHead = false}) {
     localStorage.setItem("BLOG_THEME", theme);
 
     setMounted(true);
-  }, [ theme ]);
+  }, [theme]);
 
   const containerProps = {
-    ...(isBlog && {md : 12}),
-    ...(!isBlog && {md : 8, mdOffset : 2}),
+    ...(isBlog && { md: 12 }),
+    ...(!isBlog && { md: 8, mdOffset: 2 }),
   };
 
-  if (!mounted)
-    return <div />;
+  if (!mounted) return <div />;
 
   return (
     <>
@@ -82,13 +80,13 @@ function Layout({children, isBlog, secondaryPage, noHead = false}) {
                     <a>{name}</a>
                   </Link>
                 </li>
-              ))
-}
-</ul>
+              ))}
+            </ul>
           </Col>
 
-    <Col xs = {2} style = {{ textAlign: "right" }}>< button
-className = "theme-switch-button"
+          <Col xs={2} style={{ textAlign: "right" }}>
+            <button
+              className="theme-switch-button"
               onClick={() => switchTheme()}
             >
               {theme === "dark" ? <Sun /> : <Moon />}
@@ -105,7 +103,7 @@ className = "theme-switch-button"
                 className={`blog-title`}
                 style={
                   isBlog && {
-  textAlign: "left",
+                    textAlign: "left",
                   }
                 }
               >
@@ -122,9 +120,10 @@ className = "theme-switch-button"
         <div>No tracking. No ads. Happy {currentDayName()}!</div>
         <div>
           & copy;
-                {new Date().getFullYear()}</div>
-      </footer><
-                    />
+          {new Date().getFullYear()}
+        </div>
+      </footer>
+    </>
   );
 }
 
