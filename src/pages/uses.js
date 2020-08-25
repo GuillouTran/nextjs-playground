@@ -50,7 +50,7 @@ Uses.getInitialProps = () => {
     data: {
       og: {
         description: "What Telmo uses on a daily basis.",
-        image: "https://guilloutran.com/og/uses.png",
+        image: `https://guilloutran.com/og/uses.png`,
       },
     },
   };
