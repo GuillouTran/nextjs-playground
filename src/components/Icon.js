@@ -1,7 +1,7 @@
 import React from "react";
 import simpleIcons from "simple-icons";
 
-const Icon = ({ type, style }) => {
+const Icon = ({type, style}) => {
   const icon = simpleIcons.get(type);
 
   return (
