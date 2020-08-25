@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+        />{" "}
         <meta
           property="og:title"
           content={title || `GuillouTran, code & opinion`}
@@ -35,13 +35,12 @@ function MyApp({ Component, pageProps }) {
           property="og:image"
           content={og ? og.image : `https://telmo.im/og/default.png`}
         />
-
         <script
           async
-          src="https://platform.twitter.com/widgets.js "
+          src="https:/ /
+      platform.twitter.com / widgets.js "
           charSet="utf-8"
         ></script>
-
         <title>{title || `GuillouTran: code & opinion`}</title>
       </Head>
 

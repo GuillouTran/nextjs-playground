@@ -1,12 +1,12 @@
-import React from 'react';
-import useSWR from 'swr';
+import React from "react";
+import useSWR from "swr";
 
-import fetcher from '../lib/fetcher';
+import fetcher from "../lib/fetcher";
 
-import Track from './Track';
+import Track from "./Track";
 
 const TopTracks = () => {
-  const { data } = useSWR('/api/top-tracks', fetcher);
+  const { data } = useSWR("/api/top-tracks", fetcher);
 
   if (!data) {
     return null;

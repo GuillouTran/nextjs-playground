@@ -1,12 +1,9 @@
-import React from 'react';
-import { useColorMode, Text, Flex, Box, Link } from '@chakra-ui/core';
+import { Box, Flex, Link, Text, useColorMode } from "@chakra-ui/core";
+import React from "react";
 
 const MetricCard = ({ header, link, metric }) => {
   const { colorMode } = useColorMode();
-  const borderColor = {
-    light: 'gray.200',
-    dark: 'gray.700'
-  };
+  const borderColor = { light: "gray.200", dark: "gray.700" };
 
   return (
     <Box
@@ -17,12 +14,10 @@ const MetricCard = ({ header, link, metric }) => {
       minW="300px"
     >
       <Link href={link} isExternal>
-        <Flex align="center">
-          {header}
-        </Flex>
+        <Flex align="center">{header}</Flex>
       </Link>
       <Text mt={2} fontSize="3xl" fontWeight="bold" lineHeight="short">
-        {metric || '-'}
+        {metric || "-"}
       </Text>
     </Box>
   );
