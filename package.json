@@ -7,7 +7,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
     "build:static": "next build && next export"
   },
   "author": "Nghia Guillou <@guilloutran>",
