@@ -63,7 +63,7 @@ Blog.getInitialProps = async(context) => {
         .split('.')
         .slice(0, -1)
         .join('.')
-      const value = values[index]
+      const value = values[index];
       const document = matter(value.default)
       return { document, slug }
     })
