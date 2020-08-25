@@ -24,11 +24,8 @@ function About() {
   return (
     <>
       <Layout secondaryPage>
-        <div
-          style={{
-            marginTop: 50,
-          }}
-        >
+        <div style={{ marginTop: 50 }}>
+          {" "}
           <h1 className="main-h1 about-h1">
             Telmo{" "}
             <TextTransition
@@ -37,7 +34,6 @@ function About() {
               style={{ display: "inline-block" }}
             />
           </h1>
-
           <div className="about-intro">
             <Row>
               <Col md={12}>
@@ -51,7 +47,7 @@ function About() {
               </Col>
             </Row>
             <hr />
-            <h3>What I've worked with so far</h3>
+            <h3>What I've worked with so far</h3>{" "}
             <Row style={{ marginTop: 30 }}>
               {" "}
               {PRESENT.map((s) => (

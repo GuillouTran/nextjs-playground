@@ -9,12 +9,7 @@ function Reviews() {
       <Layout secondaryPage>
         <Row>
           <Col md={12}>
-            <h1
-              className="main-h1"
-              style={{
-                marginBottom: 50,
-              }}
-            >
+            <h1 className="main-h1" style={{ marginBottom: 50 }}>
               Pull request reviews
             </h1>
 
@@ -27,14 +22,14 @@ function Reviews() {
               <br />
               So, I'll be spending some time after work reviewing your pull
               requests, I'll only review <b>HTML</b>, <b>CSS</b>,{" "}
-              <b>JavaScript</b> and <b>ReactJS</b>.
+              <b>JavaScript</b> and <b>ReactJS</b>.<br />
               <br />
-              <br />
-              <h3 className="reviews-what-to-do">What do you need to do?</h3>
+              <h3 className="reviews-what-to-do">What do you need to do ? </h3>
               <ul className="reviews-list">
                 <li>
                   <a
-                    href="https://github.com"
+                    href="https:/ /
+                github.com "
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
@@ -54,14 +49,14 @@ function Reviews() {
                   If the repository is private you'll need to add{" "}
                   <a
                     href="https:/ /
-          github.com /
-          telmogoncalves
-          "
+  github.com / telmogoncalves
+  "
                     style={{ display: "inline", margin: 0 }}
                     target="_blank "
                     rel=" noopener
-              noreferrer nofollow "
+  noreferrer nofollow "
                   >
+                    {" "}
                     my account
                   </a>{" "}
                   as a collaborator .
@@ -74,11 +69,12 @@ function Reviews() {
                 </li>
 
                 <li>
-                  <span className="point">Timings</span>Keep in mind I might not
-                  review pull requests every single day, although if you see
+                  <span className="point">Timings </span>Keep in mind I might
+                  not review pull requests every single day, although if you see
                   that I'm taking too long drop me a message on{" "}
                   <a
-                    href="https://twitter.com/telmo"
+                    href="https:/ /
+          twitter.com / telmo "
                     style={{ display: "inline", margin: 0 }}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
