@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Layout from '../components/Layout'
-import { USES } from '../constants/Uses'
+import Layout from "../components/Layout";
+import { USES } from "../constants/Uses";
 
 function Uses({ og }) {
   return (
@@ -10,12 +10,16 @@ function Uses({ og }) {
         <h1 className="main-h1">What I use</h1>
 
         <div className="uses-intro">
-          I often get asked about what's my setup as well as what
-          I use to share all the tips I usually post on {' '}
-          <a href="https://twitter.com/guilloutran" target="_blank" rel="noopener noreferrer nofollow">
+          I often get asked about what's my setup as well as what I use to share
+          all the tips I usually post on{" "}
+          <a
+            href="https://twitter.com/guilloutran"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
             Twitter
-          </a>, {' '}
-          so here it is.
+          </a>
+          , so here it is.
         </div>
 
         {USES.map(({ title, stack }) => (
@@ -24,7 +28,13 @@ function Uses({ og }) {
 
             {stack.map(({ name, description, link }) => (
               <li key={name}>
-                <a href={link} target="_blank" rel="noopener noreferrer nofollow">{name}</a>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  {name}
+                </a>
                 <span>{description}</span>
               </li>
             ))}
@@ -32,7 +42,7 @@ function Uses({ og }) {
         ))}
       </Layout>
     </>
-  )
+  );
 }
 
 Uses.getInitialProps = () => {
@@ -40,10 +50,10 @@ Uses.getInitialProps = () => {
     data: {
       og: {
         description: "What Telmo uses on a daily basis.",
-        image: "https://guilloutran.com/og/uses.png"
-      }
-    }
-  }
-}
+        image: "https://guilloutran.com/og/uses.png",
+      },
+    },
+  };
+};
 
-export default Uses
+export default Uses;
