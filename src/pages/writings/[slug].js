@@ -1,20 +1,23 @@
 import matter from "gray-matter";
 import Link from "next/link";
 import React from "react";
+import {BookOpen} from 'react-feather'
+import {Col, Row} from 'react-flexbox-grid'
 import ReactMarkdown from "react-markdown";
 import ProgressBar from "react-scroll-progress-bar";
-import { BookOpen } from 'react-feather'
 import readingTime from 'reading-time'
-import { Row, Col } from 'react-flexbox-grid'
+
 import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
 
-function Writing({ content, data }) {
+function Writing({content, data}) {
   const frontmatter = data;
-  const { title, author } = frontmatter;
-  const avatar = `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${author.twitter}&w=40`;
-  const { text } = readingTime(content)
-  
+  const {title, author} = frontmatter;
+  const avatar =
+      `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${
+          author.twitter}&w=40`;
+  const {text} = readingTime(content)
+
   return (
     <>
       <div className="writing-progress">
@@ -35,7 +38,8 @@ function Writing({ content, data }) {
 
           <div className="author">
             <a
-              href={`https://twitter.com/${author.twitter}`}
+              href={`https://twitter.com/${
+    author.twitter}`}
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
