@@ -2,7 +2,6 @@ import React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
-import Head from 'next/head'
 import ProgressBar from 'react-scroll-progress-bar'
 
 import Layout from '../../components/Layout'
@@ -53,7 +52,7 @@ function Writing({ content, data }) {
 
             <div className="twitter-follow">
               If you liked this writing don't follow me on {' '}
-              <a href="https://twitter.com/telmo" rel="noopener noreferrer nofollow">Twitter</a>, {' '}
+              <a href="https://twitter.com/guilloutran" rel="noopener noreferrer nofollow">Twitter</a>, {' '}
               I only shitpost over there.
             </div>
           </div>
