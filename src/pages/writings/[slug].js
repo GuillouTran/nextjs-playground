@@ -3,7 +3,9 @@ import Link from "next/link";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import ProgressBar from "react-scroll-progress-bar";
-
+import { BookOpen } from 'react-feather'
+import readingTime from 'reading-time'
+import { Row, Col } from 'react-flexbox-grid'
 import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
 
@@ -11,7 +13,8 @@ function Writing({ content, data }) {
   const frontmatter = data;
   const { title, author } = frontmatter;
   const avatar = `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${author.twitter}&w=40`;
-
+  const { text } = readingTime(content)
+  
   return (
     <>
       <div className="writing-progress">
@@ -24,6 +27,11 @@ function Writing({ content, data }) {
             <a className="back-button">back</a>
           </Link>
           <h1 className="main-h1">{title}</h1>
+
+          <div className="reading-time">
+            <BookOpen size="16px" />
+            {text}
+          </div>
 
           <div className="author">
             <a
