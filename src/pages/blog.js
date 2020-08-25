@@ -18,12 +18,12 @@ function freshWriting(date) {
   return today - writingDate < (60 * 60 * 1000 * 24 * 2) // 2 days old
 }
 
-function Blog({ writings }) {
+function Blog({ posts }) {
   return (
     <>
       <Layout isBlog>
         <Row>
-          {writings.map(({ document, slug }) => {
+          {posts.map(({ document, slug }) => {
             const { data: { title, date } } = document
 
             return (
@@ -35,7 +35,7 @@ function Blog({ writings }) {
                     </Col>
 
                     <Col md={12}>
-                      <Link href="/writings/[slug]" as={`/writings/${slug}`}>
+                      <Link href="/posts/[slug]" as={`/posts/${slug}`}>
                         <a>
                           {freshWriting(date) && <div className="pulse" />}
                           <span className="writing-title">{title}</span>
@@ -54,7 +54,7 @@ function Blog({ writings }) {
 }
 
 Blog.getInitialProps = async(context) => {
-  const writings = (context => {
+  const posts = (context => {
     const keys = context.keys()
     const values = keys.map(context)
     const data = keys.map((key, index) => {
@@ -69,10 +69,10 @@ Blog.getInitialProps = async(context) => {
     })
 
     return data.slice().sort((a, b) => new Date(b.document.data.date) - new Date(a.document.data.date))
-  })(require.context('../../content/writings', true, /\.md$/))
+  })(require.context('../../posts', true, /\.md$/))
 
   return {
-    writings,
+    posts,
   }
 }
 export default Blog

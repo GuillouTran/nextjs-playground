@@ -38,10 +38,8 @@ function MyApp({ Component, pageProps }) {
 
         <script
           async
-          src="https:/ /
-               platform.twitter.com / widgets.js "
-          charSet=" utf -
-           8 "
+          src="https://platform.twitter.com/widgets.js "
+          charSet="utf-8"
         ></script>
 
         <title>{title || `GuillouTran: code & opinion`}</title>
