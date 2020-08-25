@@ -1,16 +1,13 @@
+import {Box, Flex, Link, Text, useColorMode} from '@chakra-ui/core';
 import React from 'react';
-import { useColorMode, Text, Flex, Box, Link } from '@chakra-ui/core';
 
-const MetricCard = ({ header, link, metric }) => {
-  const { colorMode } = useColorMode();
-  const borderColor = {
-    light: 'gray.200',
-    dark: 'gray.700'
-  };
+const MetricCard = ({header, link, metric}) => {
+  const {colorMode} = useColorMode();
+  const borderColor = {light : 'gray.200', dark : 'gray.700'};
 
   return (
     <Box
-      border="1px solid"
+  border = "1px solid"
       borderColor={borderColor[colorMode]}
       borderRadius={8}
       p={4}

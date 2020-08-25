@@ -1,7 +1,7 @@
+import {SimpleGrid} from '@chakra-ui/core';
+import format from 'comma-number';
 import React from 'react';
 import useSWR from 'swr';
-import format from 'comma-number';
-import { SimpleGrid } from '@chakra-ui/core';
 
 import fetcher from '../../lib/fetcher';
 
