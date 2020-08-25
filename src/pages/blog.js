@@ -69,7 +69,7 @@ Blog.getInitialProps = async(context) => {
     })
 
     return data.slice().sort((a, b) => new Date(b.document.data.date) - new Date(a.document.data.date))
-  })(require.context('../writings', true, /\.md$/))
+  })(require.context('../../content/writings', true, /\.md$/))
 
   return {
     writings,
