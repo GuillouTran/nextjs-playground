@@ -24,11 +24,7 @@ function About() {
   return (
     <>
       <Layout secondaryPage>
-        <div
-          style={{
-            marginTop: 50,
-          }}
-        >
+        <div style={{ marginTop: 50 }}>
           {" "}
           <h1 className="main-h1 about-h1">
             Telmo{" "}
