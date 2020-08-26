@@ -10,7 +10,7 @@ import readingTime from "reading-time";
 import CodeBlock from "../../components/CodeBlock";
 import Layout from "../../components/Layout";
 
-function Writing({ content, data }) {
+function Posts({ content, data }) {
   const frontmatter = data;
   const { title, author } = frontmatter;
   const avatar = `https://images.weserv.nl/?url=https://unavatar.now.sh/twitter/${author.twitter}&w=40`;
@@ -90,7 +90,7 @@ function Writing({ content, data }) {
   );
 }
 
-Writing.getInitialProps = async (context) => {
+Posts.getInitialProps = async (context) => {
   const { slug } = context.query;
   const content = await import(`../../../posts/${slug}.md`);
   const data = matter(content.default);
@@ -98,4 +98,4 @@ Writing.getInitialProps = async (context) => {
   return { ...data };
 };
 
-export default Writing;
+export default Posts;
