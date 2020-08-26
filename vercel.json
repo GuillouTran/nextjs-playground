@@ -2,19 +2,7 @@
     "version": 2,
     "cleanUrls": true,
     "trailingSlash": false,
-    "env": {
-      "UNSPLASH_ACCESS_KEY": "UNSPLASH_ACCESS_KEY"
-    },
     "header": [
-      {
-        "source": "/api/unsplash",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=1200, stale-while-revalidate=600"
-          }
-        ]
-      },
       {
         "source": "/api/now-playing",
         "headers": [
