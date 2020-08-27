@@ -15,6 +15,8 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@sentry/react": "^5.21.4",
+    "@sentry/tracing": "^5.21.4",
     "@testing-library/dom": "^7.22.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
