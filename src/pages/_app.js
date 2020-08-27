@@ -1,9 +1,29 @@
 import "../styles/base.css";
+import * as Sentry from "@sentry/browser";
+import { RewriteFrames } from "@sentry/integrations";
+import getConfig from "next/config";
 
 import { ThemeProvider } from "@chakra-ui/core";
 import Head from "next/head";
 
 import theme from "../styles/theme";
+
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  const config = getConfig();
+  const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
+  Sentry.init({
+    enabled: process.env.NODE_ENV === "production",
+    integrations: [
+      new RewriteFrames({
+        iteratee: (frame) => {
+          frame.filename = frame.filename.replace(distDir, "app:///_next");
+          return frame;
+        },
+      }),
+    ],
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  });
+}
 
 function MyApp({ Component, pageProps }) {
   const og = pageProps.data?.og;

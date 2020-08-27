@@ -1,5 +1,5 @@
 import NextErrorComponent from 'next/error'
-import * as Sentry from '@sentry/node'
+import * as Sentry from '@sentry/browser'
 
 const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   if (!hasGetInitialPropsRun && err) {

@@ -78,6 +78,7 @@ module.exports = withSourceMaps({
   })
 
 module.exports = withCSS(
+	{ env: { DEPLOY_ENV: process.env.DEPLOY_ENV } },
 	withSass(
 		withTM({
   		transpileModules: [
