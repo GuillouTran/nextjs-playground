@@ -3,7 +3,7 @@ const withCSS = require('@zeit/next-css');
 const withTM = require('next-transpile-modules');
 // Use the hidden-source-map option when you don't want the source maps to be
 // publicly available on the servers, only to the error reporting
-const withSourceMaps = require('@zeit/next-source-maps')()
+const withSourceMaps = require('@zeit/next-source-maps')
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
