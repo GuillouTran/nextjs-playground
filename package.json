@@ -50,5 +50,8 @@
     "reading-time": "^1.2.0",
     "simple-icons": "^3.6.0",
     "swr": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-css-modules-transform": "^1.6.2"
   }
 }
