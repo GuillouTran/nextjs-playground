@@ -15,6 +15,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@sentry/node": "^5.21.4",
     "@sentry/react": "^5.21.4",
     "@sentry/tracing": "^5.21.4",
     "@sentry/webpack-plugin": "^1.12.1",
