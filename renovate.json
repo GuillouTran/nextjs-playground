@@ -3,7 +3,12 @@
     "config:base"
   ],
   "vulnerabilityAlerts": {
-    "labels": ["security", "bug"],
-    "assignees": ["@guilloutran"]
+    "labels": [
+      "security",
+      "bug"
+    ],
+    "assignees": [
+      "@guilloutran"
+    ]
   }
 }
