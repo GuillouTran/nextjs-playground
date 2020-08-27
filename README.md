@@ -7,9 +7,9 @@ This repository is the official source code for my personal website/blog which a
 
 ## Install
 
-    + Install: ```npm install```
-    + Develop: ```npm run dev```
-    + Production: ```npm run build```
+    + Install: npm install
+    + Develop: npm run dev
+    + Production: npm run build
 
 ## Credit and inspiration
 
