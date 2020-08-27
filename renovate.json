@@ -1,5 +1,9 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security", "bug"],
+    "assignees": ["@guilloutran"]
+  }
 }
