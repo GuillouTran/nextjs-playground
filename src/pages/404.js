@@ -9,8 +9,6 @@ import {
   Button
 } from '@chakra-ui/core';
 
-import Container from '../components/Container';
-
 const Error = () => {
   const { colorMode } = useColorMode();
   const secondaryTextColor = {
@@ -19,7 +17,6 @@ const Error = () => {
   };
 
   return (
-    <Container>
       <Stack
         as="main"
         spacing={8}
@@ -56,7 +53,6 @@ const Error = () => {
           </NextLink>
         </Flex>
       </Stack>
-    </Container>
   );
 };
 
