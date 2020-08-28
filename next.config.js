@@ -5,7 +5,7 @@ const withSourceMaps = require("@zeit/next-source-maps")();
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 const {
-  NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
+  NEXT_PUBLIC_SENTRY_DSN : SENTRY_DSN,
   SENTRY_ORG,
   SENTRY_PROJECT,
   SENTRY_AUTH_TOKEN,
@@ -15,19 +15,17 @@ const {
   VERCEL_BITBUCKET_COMMIT_SHA,
 } = process.env;
 
-const COMMIT_SHA =
-  VERCEL_GITHUB_COMMIT_SHA ||
-  VERCEL_GITLAB_COMMIT_SHA ||
-  VERCEL_BITBUCKET_COMMIT_SHA;
+const COMMIT_SHA = VERCEL_GITHUB_COMMIT_SHA || VERCEL_GITLAB_COMMIT_SHA ||
+                   VERCEL_BITBUCKET_COMMIT_SHA;
 
 process.env.SENTRY_DSN = SENTRY_DSN;
 const basePath = "";
 
 module.exports = withSourceMaps({
-  serverRuntimeConfig: {
-    rootDir: __dirname,
+  serverRuntimeConfig : {
+    rootDir : __dirname,
   },
-  webpack: (config, options) => {
+  webpack : (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
     // @sentry/node will run in a Node.js environment. @sentry/node will use
     // Node.js-only APIs to catch even more unhandled exceptions.
@@ -51,23 +49,15 @@ module.exports = withSourceMaps({
     // and upload the source maps to sentry.
     // This is an alternative to manually uploading the source maps
     // Note: This is disabled in development mode.
-    if (
-      SENTRY_DSN &&
-      SENTRY_ORG &&
-      SENTRY_PROJECT &&
-      SENTRY_AUTH_TOKEN &&
-      COMMIT_SHA &&
-      NODE_ENV === "production"
-    ) {
-      config.plugins.push(
-        new SentryWebpackPlugin({
-          include: ".next",
-          ignore: ["node_modules"],
-          stripPrefix: ["webpack://_N_E/"],
-          urlPrefix: `~${basePath}/_next`,
-          release: COMMIT_SHA,
-        })
-      );
+    if (SENTRY_DSN && SENTRY_ORG && SENTRY_PROJECT && SENTRY_AUTH_TOKEN &&
+        COMMIT_SHA && NODE_ENV === "production") {
+      config.plugins.push(new SentryWebpackPlugin({
+        include : ".next",
+        ignore : [ "node_modules" ],
+        stripPrefix : [ "webpack://_N_E/" ],
+        urlPrefix : `~${basePath}/_next`,
+        release : COMMIT_SHA,
+      }));
     }
     return config;
   },
@@ -77,62 +67,46 @@ const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 const withTM = require("next-transpile-modules");
 
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
+module.exports = withCSS(withSass(withTM({
+  transpileModules : [ "react-flexbox-grid", "react-syntax-highlighter" ],
+  webpack : function(config) {
+    config.module.rules.push({
+      test : /\.md$/,
+      use : "raw-loader",
+    });
+    return config;
+  },
+})));
 
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
+module.exports = withCSS(withSass(withTM({
+  transpileModules : [ "react-flexbox-grid", "react-syntax-highlighter" ],
+  webpack : function(config) {
+    config.module.rules.push({
+      test : /\.md$/,
+      use : "raw-loader",
+    });
+    return config;
+  },
+})));
 
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
+module.exports = withCSS(withSass(withTM({
+  transpileModules : [ "react-flexbox-grid", "react-syntax-highlighter" ],
+  webpack : function(config) {
+    config.module.rules.push({
+      test : /\.md$/,
+      use : "raw-loader",
+    });
+    return config;
+  },
+})));
 
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
+module.exports = withCSS(withSass(withTM({
+  transpileModules : [ "react-flexbox-grid", "react-syntax-highlighter" ],
+  webpack : function(config) {
+    config.module.rules.push({
+      test : /\.md$/,
+      use : "raw-loader",
+    });
+    return config;
+  },
+})));
