@@ -9,7 +9,7 @@ export const PRESENT = [
   "jQuery",
   "CoffeeScript",
   "Angular",
-  "Rails",
+  "Ruby on Rails",
   "Gatsby",
   "Sass",
   "Apollo GraphQL",
@@ -19,7 +19,7 @@ export const PRESENT = [
   "Node.js",
   "Redux",
   "TypeScript",
-  "Zeit",
+  "Vercel",
 ];
 
 export const SKILLS = [
