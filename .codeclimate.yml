@@ -1,0 +1,30 @@
+version: "2"
+
+plugins:
+  eslint:
+    enabled: true
+    channel: "eslint-4"
+
+checks:
+  method-complexity:
+    enabled: false
+  method-lines:
+    config:
+      threshold: 100
+  similar-code:
+    enabled: true
+  identical-code:
+    enabled: true
+
+ratings:
+   paths:
+    - "**.js"
+    - "**.jsx"
+    - "**.css"
+    - "**.less"
+    - "**.scss"
+    - "**.sss"
+
+exclude_paths:
+- static/**/*
+- src/styles/*.css
