@@ -1,9 +1,9 @@
 import "../styles/base.css";
+
+import { ThemeProvider } from "@chakra-ui/core";
 import * as Sentry from "@sentry/browser";
 import { RewriteFrames } from "@sentry/integrations";
 import getConfig from "next/config";
-
-import { ThemeProvider } from "@chakra-ui/core";
 import Head from "next/head";
 
 import theme from "../styles/theme";
