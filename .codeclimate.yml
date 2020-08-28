@@ -10,7 +10,7 @@ checks:
     enabled: false
   method-lines:
     config:
-      threshold: 100
+      threshold: 50
   similar-code:
     enabled: true
   identical-code:
