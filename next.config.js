@@ -99,27 +99,3 @@ module.exports = withCSS(
     })
   )
 );
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack(config) {
-        config.module.rules.push({ test: /\.md$/, use: "raw-loader" });
-        return config;
-      },
-    })
-  )
-);
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack(config) {
-        config.module.rules.push({ test: /\.md$/, use: "raw-loader" });
-        return config;
-      },
-    })
-  )
-);
