@@ -3,9 +3,9 @@
 import React from "react";
 
 import Layout from "../components/Layout";
-import { USES } from "../constants/Uses";
+import {USES} from "../constants/Uses";
 
-function Uses({ og }) {
+function Uses({og}) {
   return (
     <>
       <Layout secondaryPage>
@@ -16,17 +16,20 @@ function Uses({ og }) {
           all the tips I usually post on{" "}
           <a
             href="https://twitter.com/guilloutran"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            Twitter
-          </a>
+  target = "_blank"
+  rel =
+      "noopener noreferrer nofollow" >
+      Twitter</a>
           , so here it is.
         </div>
 
-        {USES.map(({ title, stack }) => (
-          <ul className="uses-list" key={title}>
-            <li className="head">{title}</li>
+      {USES.map(
+          ({
+            title,
+            stack
+          }) => (<ul className = "uses-list" key = {title}><li className =
+                                                                "head">{title}<
+                 /li>
 
             {stack.map(({ name, description, link }) => (
               <li key={name}>
@@ -37,13 +40,12 @@ function Uses({ og }) {
                 >
                   {name}
                 </a>
-                <span>{description}</span>
-              </li>
-            ))}
-          </ul>
+                 <span>{description}</span>
+              </li>))}<
+          /ul>
         ))}
-      </Layout>
-    </>
+      </Layout><
+      />
   );
 }
 
