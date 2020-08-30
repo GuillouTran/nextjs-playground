@@ -42,6 +42,7 @@ module.exports = withSourceMaps({
     // So ask Webpack to replace @sentry/node imports with @sentry/browser when
     // building the browser's bundle
     if (!options.isServer) {
+      // eslint-disable-next-line no-param-reassign
       config.resolve.alias['@sentry/node'] = '@sentry/browser';
     }
 
@@ -75,18 +76,6 @@ module.exports = withSourceMaps({
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 const withTM = require('next-transpile-modules');
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ['react-flexbox-grid', 'react-syntax-highlighter'],
-      webpack(config) {
-        config.module.rules.push({ test: /\.md$/, use: 'raw-loader' });
-        return config;
-      }
-    })
-  )
-);
 
 module.exports = withCSS(
   withSass(
