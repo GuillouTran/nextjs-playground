@@ -4,23 +4,23 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-access-state-in-setstate */
-import React, { PureComponent } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Check, Copy } from 'react-feather';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import React, { PureComponent } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Check, Copy } from "react-feather";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const preStyle = {
   borderRadius: 6,
-  padding: '1.7em',
-  lineHeight: '2.3em'
+  padding: "1.7em",
+  lineHeight: "2.3em",
 };
 
 const codeProps = {
   style: {
     fontFamily: `ibm-plex-mono, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New'`,
-    fontSize: '18.5px'
-  }
+    fontSize: "18.5px",
+  },
 };
 
 class CodeBlock extends PureComponent {
@@ -32,38 +32,34 @@ class CodeBlock extends PureComponent {
       addLines: [],
       updateLines: [],
       copiedToClipboard: false,
-      displayCopyButton: false
+      displayCopyButton: false,
     };
   }
 
   componentDidMount() {
     const { language } = this.props;
-    const linesObj = language && language.split(':')[1];
+    const linesObj = language && language.split(":")[1];
 
     if (linesObj) {
-      const splittedValues = linesObj.split(',');
+      const splittedValues = linesObj.split(",");
       let stateLabel;
-      const linesToUpdate = {
-        removeLines: [],
-        addLines: [],
-        updateLines: []
-      };
+      const linesToUpdate = { removeLines: [], addLines: [], updateLines: [] };
 
-      splittedValues.map(lines => {
-        const linesRange = lines.split(',');
+      splittedValues.map((lines) => {
+        const linesRange = lines.split(",");
 
-        linesRange.map(eachLine => {
-          const splitted = eachLine.split('-');
+        linesRange.map((eachLine) => {
+          const splitted = eachLine.split("-");
 
-          if (splitted[0] === '') {
+          if (splitted[0] === "") {
             // Is removing lines
             splitted.shift();
-            stateLabel = 'removeLines';
-          } else if (splitted[0] === '!') {
+            stateLabel = "removeLines";
+          } else if (splitted[0] === "!") {
             splitted.shift();
-            stateLabel = 'updateLines';
+            stateLabel = "updateLines";
           } else {
-            stateLabel = 'addLines';
+            stateLabel = "addLines";
           }
 
           if (splitted.length > 1) {
@@ -82,8 +78,8 @@ class CodeBlock extends PureComponent {
           this.setState({
             [stateLabel]: [
               ...this.state[stateLabel],
-              ...linesToUpdate[stateLabel]
-            ]
+              ...linesToUpdate[stateLabel],
+            ],
           });
         });
       });
@@ -101,7 +97,7 @@ class CodeBlock extends PureComponent {
   toggleCopyButton = () => {
     this.setState({
       ...this.state,
-      displayCopyButton: !this.state.displayCopyButton
+      displayCopyButton: !this.state.displayCopyButton,
     });
   };
 
@@ -112,7 +108,7 @@ class CodeBlock extends PureComponent {
       removeLines,
       updateLines,
       copiedToClipboard,
-      displayCopyButton
+      displayCopyButton,
     } = this.state;
 
     return (
@@ -120,40 +116,40 @@ class CodeBlock extends PureComponent {
         onMouseEnter={() => this.toggleCopyButton()}
         onMouseLeave={() => this.toggleCopyButton()}
       >
-        {' '}
+        {" "}
         <SyntaxHighlighter
           language={language}
           style={anOldHope}
           customStyle={preStyle}
           codeTagProps={codeProps}
           wrapLines
-          lineProps={lineNumber => {
+          lineProps={(lineNumber) => {
             const mergedLines = addLines
               .concat(removeLines)
               .concat(updateLines);
-            let style = { display: 'block' };
+            let style = { display: "block" };
 
             if (mergedLines.includes(lineNumber)) {
-              style = { ...style, margin: '0 -22px', padding: '3px 12px 6px' };
+              style = { ...style, margin: "0 -22px", padding: "3px 12px 6px" };
             }
 
             if (removeLines.includes(lineNumber)) {
               style = {
                 ...style,
                 borderLeft: `6px #f9320c solid`,
-                background: `rgba(249, 50, 12, .1)`
+                background: `rgba(249, 50, 12, .1)`,
               };
             } else if (addLines.includes(lineNumber)) {
               style = {
                 ...style,
                 borderLeft: `6px #3ac569 solid`,
-                background: `rgba(58, 197, 105, .1)`
+                background: `rgba(58, 197, 105, .1)`,
               };
             } else if (updateLines.includes(lineNumber)) {
               style = {
                 ...style,
                 borderLeft: `6px #f9c00c solid`,
-                background: `rgba(249, 192, 12, .1)`
+                background: `rgba(249, 192, 12, .1)`,
               };
             }
 
@@ -164,7 +160,7 @@ class CodeBlock extends PureComponent {
         </SyntaxHighlighter>
         <div className="copy-to-clipboard">
           <CopyToClipboard text={value} onCopy={() => this.copyToClipboard()}>
-            <button>{copiedToClipboard ? 'Copied ✔' : 'Copy'}</button>
+            <button>{copiedToClipboard ? "Copied ✔" : "Copy"}</button>
           </CopyToClipboard>
         </div>
       </div>

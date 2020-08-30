@@ -1,18 +1,18 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
-import matter from 'gray-matter';
-import Link from 'next/link';
-import React from 'react';
-import { Col, Row } from 'react-flexbox-grid';
+import matter from "gray-matter";
+import Link from "next/link";
+import React from "react";
+import { Col, Row } from "react-flexbox-grid";
 
-import Layout from '../components/Layout';
+import Layout from "../components/Layout";
 
 function formatDate(date) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const options = { year: "numeric", month: "long", day: "numeric" };
   const today = new Date(date);
 
-  return today.toLocaleDateString('en-US', options);
+  return today.toLocaleDateString("en-US", options);
 }
 
 function freshWriting(date) {
@@ -29,7 +29,7 @@ function Blog({ posts }) {
         <Row>
           {posts.map(({ document, slug }) => {
             const {
-              data: { title, date }
+              data: { title, date },
             } = document;
 
             return (
@@ -59,16 +59,16 @@ function Blog({ posts }) {
   );
 }
 
-Blog.getInitialProps = async context => {
-  const posts = (context => {
+Blog.getInitialProps = async (context) => {
+  const posts = ((context) => {
     const keys = context.keys();
     const values = keys.map(context);
     const data = keys.map((key, index) => {
       const slug = key
-        .replace(/^.*[\\\/]/, '')
-        .split('.')
+        .replace(/^.*[\\\/]/, "")
+        .split(".")
         .slice(0, -1)
-        .join('.');
+        .join(".");
       const value = values[index];
       const document = matter(value.default);
       return { document, slug };
@@ -80,7 +80,7 @@ Blog.getInitialProps = async context => {
         (a, b) =>
           new Date(b.document.data.date) - new Date(a.document.data.date)
       );
-  })(require.context('../../posts', true, /\.md$/));
+  })(require.context("../../posts", true, /\.md$/));
 
   return { posts };
 };

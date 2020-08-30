@@ -1,15 +1,15 @@
-import { Box, Link, Stack, Text, useColorMode } from '@chakra-ui/core';
-import React from 'react';
+import { Box, Link, Stack, Text, useColorMode } from "@chakra-ui/core";
+import React from "react";
 
-const Track = track => {
+const Track = (track) => {
   const { colorMode } = useColorMode();
   const borderColor = {
-    light: 'gray.100',
-    dark: 'gray.800'
+    light: "gray.100",
+    dark: "gray.800",
   };
   const rankingColor = {
-    light: 'gray.400',
-    dark: 'gray.600'
+    light: "gray.400",
+    dark: "gray.600",
   };
 
   return (

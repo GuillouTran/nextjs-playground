@@ -1,28 +1,28 @@
 /* eslint-disable no-param-reassign */
-import '../styles/base.css';
+import "../styles/base.css";
 
-import { ThemeProvider } from '@chakra-ui/core';
-import * as Sentry from '@sentry/browser';
-import { RewriteFrames } from '@sentry/integrations';
-import getConfig from 'next/config';
-import Head from 'next/head';
+import { ThemeProvider } from "@chakra-ui/core";
+import * as Sentry from "@sentry/browser";
+import { RewriteFrames } from "@sentry/integrations";
+import getConfig from "next/config";
+import Head from "next/head";
 
-import theme from '../styles/theme';
+import theme from "../styles/theme";
 
 if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   const config = getConfig();
   const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
   Sentry.init({
-    enabled: process.env.NODE_ENV === 'production',
+    enabled: process.env.NODE_ENV === "production",
     integrations: [
       new RewriteFrames({
-        iteratee: frame => {
-          frame.filename = frame.filename.replace(distDir, 'app:///_next');
+        iteratee: (frame) => {
+          frame.filename = frame.filename.replace(distDir, "app:///_next");
           return frame;
-        }
-      })
+        },
+      }),
     ],
-    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
   });
 }
 
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />{' '}
+        />{" "}
         <meta
           property="og:title"
           content={title || `GuillouTran, code & opinion`}

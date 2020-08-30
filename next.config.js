@@ -1,9 +1,9 @@
 // Use the hidden-source-map option when you don't want the source maps to be
 // publicly available on the servers, only to the error reporting
-const withSourceMaps = require('@zeit/next-source-maps')();
+const withSourceMaps = require("@zeit/next-source-maps")();
 
 // Use the SentryWebpack plugin to upload the source maps during build step
-const SentryWebpackPlugin = require('@sentry/webpack-plugin');
+const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
@@ -13,7 +13,7 @@ const {
   NODE_ENV,
   VERCEL_GITHUB_COMMIT_SHA,
   VERCEL_GITLAB_COMMIT_SHA,
-  VERCEL_BITBUCKET_COMMIT_SHA
+  VERCEL_BITBUCKET_COMMIT_SHA,
 } = process.env;
 
 const COMMIT_SHA =
@@ -22,7 +22,7 @@ const COMMIT_SHA =
   VERCEL_BITBUCKET_COMMIT_SHA;
 
 process.env.SENTRY_DSN = SENTRY_DSN;
-const basePath = '';
+const basePath = "";
 
 module.exports = withSourceMaps({
   serverRuntimeConfig: { rootDir: __dirname },
@@ -43,7 +43,7 @@ module.exports = withSourceMaps({
     // building the browser's bundle
     if (!options.isServer) {
       // eslint-disable-next-line no-param-reassign
-      config.resolve.alias['@sentry/node'] = '@sentry/browser';
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
 
     // When all the Sentry configuration env variables are available/configured
@@ -57,34 +57,34 @@ module.exports = withSourceMaps({
       SENTRY_PROJECT &&
       SENTRY_AUTH_TOKEN &&
       COMMIT_SHA &&
-      NODE_ENV === 'production'
+      NODE_ENV === "production"
     ) {
       config.plugins.push(
         new SentryWebpackPlugin({
-          include: '.next',
-          ignore: ['node_modules'],
-          stripPrefix: ['webpack://_N_E/'],
+          include: ".next",
+          ignore: ["node_modules"],
+          stripPrefix: ["webpack://_N_E/"],
           urlPrefix: `~${basePath}/_next`,
-          release: COMMIT_SHA
+          release: COMMIT_SHA,
         })
       );
     }
     return config;
   },
-  basePath
+  basePath,
 });
-const withSass = require('@zeit/next-sass');
-const withCSS = require('@zeit/next-css');
-const withTM = require('next-transpile-modules');
+const withSass = require("@zeit/next-sass");
+const withCSS = require("@zeit/next-css");
+const withTM = require("next-transpile-modules");
 
 module.exports = withCSS(
   withSass(
     withTM({
-      transpileModules: ['react-flexbox-grid', 'react-syntax-highlighter'],
+      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
       webpack(config) {
-        config.module.rules.push({ test: /\.md$/, use: 'raw-loader' });
+        config.module.rules.push({ test: /\.md$/, use: "raw-loader" });
         return config;
-      }
+      },
     })
   )
 );

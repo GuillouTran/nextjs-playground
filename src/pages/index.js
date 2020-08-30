@@ -1,6 +1,6 @@
-import Layout from '../components/Layout';
-import NowPlaying from '../components/NowPlaying';
-import TopTracks from '../components/TopTracks';
+import Layout from "../components/Layout";
+import NowPlaying from "../components/NowPlaying";
+import TopTracks from "../components/TopTracks";
 
 function HomePage() {
   return (
