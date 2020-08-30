@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Layout from '../components/Layout';
-import {USES} from '../constants/Uses';
+import Layout from "../components/Layout";
+import { USES } from "../constants/Uses";
 
-function Uses({og}) {
+function Uses({ og }) {
   return (
     <>
       <Layout secondaryPage>
@@ -11,23 +11,20 @@ function Uses({og}) {
 
         <div className="uses-intro">
           I often get asked about what's my setup as well as what I use to share
-          all the tips I usually post on{' '}
+          all the tips I usually post on{" "}
           <a
             href="https://twitter.com/guilloutran"
-  target = "_blank"
-  rel =
-      "noopener noreferrer nofollow" >
-      Twitter</a>
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            Twitter
+          </a>
           , so here it is.
         </div>
 
-      {USES.map(
-          ({
-            title,
-            stack
-          }) => (<ul className = "uses-list" key = {title}><li className =
-                                                                "head">{title}<
-                 /li>
+        {USES.map(({ title, stack }) => (
+          <ul className="uses-list" key={title}>
+            <li className="head">{title}</li>
 
             {stack.map(({ name, description, link }) => (
               <li key={name}>
@@ -38,12 +35,13 @@ function Uses({og}) {
                 >
                   {name}
                 </a>
-                 <span>{description}</span>
-              </li>))}<
-          /ul>
+                <span>{description}</span>
+              </li>
+            ))}
+          </ul>
         ))}
-      </Layout><
-      />
+      </Layout>
+    </>
   );
 }
 
@@ -51,11 +49,11 @@ Uses.getInitialProps = () => {
   return {
     data: {
       og: {
-        description: 'What Telmo uses on a daily basis.',
+        description: "What Telmo uses on a daily basis.",
         image: `https:/ /
-          guilloutran.com / og / uses.png`
-      }
-    }
+          guilloutran.com / og / uses.png`,
+      },
+    },
   };
 };
 
