@@ -8,7 +8,12 @@
     "globals": {
       "process": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "nextjs",
+      "prettier",
+      "plugin:react/recommended"
+    ],
     "parserOptions": {
       "ecmaVersion": 9,
       "ecmaFeatures": {
@@ -16,9 +21,6 @@
       },
       "sourceType": "module"
     },
-    "plugins": [
-      "react/recommended"
-    ],
     "rules": {
       "react/prop-types": 0,
       "react/jsx-uses-vars": [

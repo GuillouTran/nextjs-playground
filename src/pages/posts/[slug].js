@@ -1,14 +1,14 @@
-import matter from "gray-matter";
-import Link from "next/link";
-import React from "react";
-import { BookOpen } from "react-feather";
-import { Col, Row } from "react-flexbox-grid";
-import ReactMarkdown from "react-markdown";
-import ProgressBar from "react-scroll-progress-bar";
-import readingTime from "reading-time";
+import matter from 'gray-matter';
+import Link from 'next/link';
+import React from 'react';
+import { BookOpen } from 'react-feather';
+import { Col, Row } from 'react-flexbox-grid';
+import ReactMarkdown from 'react-markdown';
+import ProgressBar from 'react-scroll-progress-bar';
+import readingTime from 'reading-time';
 
-import CodeBlock from "../../components/CodeBlock";
-import Layout from "../../components/Layout";
+import CodeBlock from '../../components/CodeBlock';
+import Layout from '../../components/Layout';
 
 function Posts({ content, data }) {
   const frontmatter = data;
@@ -51,8 +51,8 @@ function Posts({ content, data }) {
               escapeHtml={false}
               renderers={{
                 code: CodeBlock,
-                link: (props) => {
-                  if (!props.href.startsWith("http")) {
+                link: props => {
+                  if (!props.href.startsWith('http')) {
                     return (
                       <a href={props.href} rel="nofollow noreferrer noopener">
                         {props.children}
@@ -69,12 +69,12 @@ function Posts({ content, data }) {
                       {props.children}
                     </a>
                   );
-                },
+                }
               }}
             />
 
             <div className="twitter-follow">
-              If you liked this writing don't follow me on{" "}
+              If you liked this writing don't follow me on{' '}
               <a
                 href="https://twitter.com/guilloutran"
                 rel="noopener noreferrer nofollow"
@@ -90,7 +90,7 @@ function Posts({ content, data }) {
   );
 }
 
-Posts.getInitialProps = async (context) => {
+Posts.getInitialProps = async context => {
   const { slug } = context.query;
   const content = await import(`../../../posts/${slug}.md`);
   const data = matter(content.default);

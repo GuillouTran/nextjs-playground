@@ -6,19 +6,19 @@ import {
   Skeleton,
   Stack,
   Text,
-  useColorMode,
-} from "@chakra-ui/core";
-import React from "react";
-import useSWR from "swr";
+  useColorMode
+} from '@chakra-ui/core';
+import React from 'react';
+import useSWR from 'swr';
 
-import fetcher from "../lib/fetcher";
+import fetcher from '../lib/fetcher';
 
 const NowPlaying = () => {
-  const { data } = useSWR("/api/now-playing", fetcher);
+  const { data } = useSWR('/api/now-playing', fetcher);
   const { colorMode } = useColorMode();
   const borderColor = {
-    light: "gray.200",
-    dark: "gray.700",
+    light: 'gray.200',
+    dark: 'gray.700'
   };
 
   return (
@@ -38,7 +38,7 @@ const NowPlaying = () => {
           height="60px"
           width="60px"
           borderRadius={8}
-          src={data?.albumImageUrl || "/images/placeholder.jpg"}
+          src={data?.albumImageUrl || '/images/placeholder.jpg'}
         />
       </Skeleton>
       <Stack
@@ -58,7 +58,7 @@ const NowPlaying = () => {
           href={data?.songUrl}
           isExternal
         >
-          {data && (data?.title || "Not Playing")}
+          {data && (data?.title || 'Not Playing')}
         </Link>
         <Text
           color="gray.500"
@@ -68,7 +68,7 @@ const NowPlaying = () => {
           overflow="hidden"
           textOverflow="ellipsis"
         >
-          {data && (data?.artist || "Spotify")}
+          {data && (data?.artist || 'Spotify')}
         </Text>
       </Stack>
       <Icon name="spotify" ml="auto" mt={1} />

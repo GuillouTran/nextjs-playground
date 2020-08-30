@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/Layout";
-import { USES } from "../constants/Uses";
+import Layout from '../components/Layout';
+import { USES } from '../constants/Uses';
 
 function Uses({ og }) {
   return (
@@ -11,7 +11,7 @@ function Uses({ og }) {
 
         <div className="uses-intro">
           I often get asked about what's my setup as well as what I use to share
-          all the tips I usually post on{" "}
+          all the tips I usually post on{' '}
           <a
             href="https://twitter.com/guilloutran"
             target="_blank"
@@ -49,11 +49,11 @@ Uses.getInitialProps = () => {
   return {
     data: {
       og: {
-        description: "What Telmo uses on a daily basis.",
+        description: 'What Telmo uses on a daily basis.',
         image: `https:/ /
-          guilloutran.com / og / uses.png`,
-      },
-    },
+          guilloutran.com / og / uses.png`
+      }
+    }
   };
 };
 

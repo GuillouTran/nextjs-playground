@@ -4,14 +4,14 @@ import {
   Heading,
   Stack,
   Text,
-  useColorMode,
-} from "@chakra-ui/core";
-import NextLink from "next/link";
-import React from "react";
+  useColorMode
+} from '@chakra-ui/core';
+import NextLink from 'next/link';
+import React from 'react';
 
 const Error = () => {
   const { colorMode } = useColorMode();
-  const secondaryTextColor = { light: "gray.700", dark: "gray.400" };
+  const secondaryTextColor = { light: 'gray.700', dark: 'gray.400' };
 
   return (
     <Stack
@@ -22,7 +22,7 @@ const Error = () => {
       m="0 auto 4rem auto"
       maxWidth="700px"
     >
-      {" "}
+      {' '}
       <Flex
         flexDirection="column"
         justifyContent="flex-start"

@@ -1,7 +1,7 @@
-import React from "react";
-import { Col, Row } from "react-flexbox-grid";
+import React from 'react';
+import { Col, Row } from 'react-flexbox-grid';
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
 function Reviews() {
   return (
@@ -21,7 +21,7 @@ function Reviews() {
               <br />
               <br />
               So, I'll be spending some time after work reviewing your pull
-              requests, I'll only review <b>HTML</b>, <b>CSS</b>,{" "}
+              requests, I'll only review <b>HTML</b>, <b>CSS</b>,{' '}
               <b>JavaScript</b> and <b>ReactJS</b>.<br />
               <br />
               <h3 className="reviews-what-to-do">What do you need to do ? </h3>
@@ -35,7 +35,7 @@ function Reviews() {
                   >
                     GitHub
                   </a>
-                  You'll need an account.{" "}
+                  You'll need an account.{' '}
                 </li>
 
                 <li>
@@ -46,19 +46,19 @@ function Reviews() {
 
                 <li>
                   <span className="point">Repository </span>
-                  If the repository is private you'll need to add{" "}
+                  If the repository is private you'll need to add{' '}
                   <a
                     href="https:/ /
   github.com / telmogoncalves
   "
-                    style={{ display: "inline", margin: 0 }}
+                    style={{ display: 'inline', margin: 0 }}
                     target="_blank "
                     rel=" noopener
   noreferrer nofollow "
                   >
-                    {" "}
+                    {' '}
                     my account
-                  </a>{" "}
+                  </a>{' '}
                   as a collaborator .
                 </li>
 
@@ -71,11 +71,11 @@ function Reviews() {
                 <li>
                   <span className="point">Timings </span>Keep in mind I might
                   not review pull requests every single day, although if you see
-                  that I'm taking too long drop me a message on{" "}
+                  that I'm taking too long drop me a message on{' '}
                   <a
                     href="https:/ /
           twitter.com / telmo "
-                    style={{ display: "inline", margin: 0 }}
+                    style={{ display: 'inline', margin: 0 }}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
@@ -112,10 +112,10 @@ Reviews.getInitialProps = () => {
   return {
     data: {
       og: {
-        description: "Need feedback on a pull request?",
-        image: "https://telmo.im/og/reviews.png",
-      },
-    },
+        description: 'Need feedback on a pull request?',
+        image: 'https://telmo.im/og/reviews.png'
+      }
+    }
   };
 };
 
