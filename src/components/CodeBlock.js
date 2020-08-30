@@ -1,3 +1,9 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-plusplus */
+/* eslint-disable radix */
+/* eslint-disable react/button-has-type */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-access-state-in-setstate */
 import React, { PureComponent } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Check, Copy } from 'react-feather';
@@ -29,14 +35,6 @@ class CodeBlock extends PureComponent {
       displayCopyButton: false
     };
   }
-
-  copyToClipboard = () => {
-    this.setState({ ...this.state, copiedToClipboard: true }, () => {
-      setTimeout(() => {
-        this.setState({ ...this.state, copiedToClipboard: false });
-      }, 3500);
-    });
-  };
 
   componentDidMount() {
     const { language } = this.props;
@@ -91,6 +89,14 @@ class CodeBlock extends PureComponent {
       });
     }
   }
+
+  copyToClipboard = () => {
+    this.setState({ ...this.state, copiedToClipboard: true }, () => {
+      setTimeout(() => {
+        this.setState({ ...this.state, copiedToClipboard: false });
+      }, 3500);
+    });
+  };
 
   toggleCopyButton = () => {
     this.setState({

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import '../styles/base.css';
 
 import { ThemeProvider } from '@chakra-ui/core';

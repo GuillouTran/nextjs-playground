@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-flexbox-grid';

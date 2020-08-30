@@ -26,6 +26,7 @@
       "react/jsx-uses-vars": [
         2
       ],
+      "react/react-in-jsx-scope": "off",
       "react/jsx-no-undef": "error",
       "no-console": 0
     }

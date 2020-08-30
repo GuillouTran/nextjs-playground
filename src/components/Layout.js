@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'react-feather';
@@ -86,6 +87,7 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
 
           <Col xs={2} style={{ textAlign: 'right' }}>
             <button
+              type="button"
               className="theme-switch-button"
               onClick={() => switchTheme()}
             >
