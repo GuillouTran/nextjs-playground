@@ -12,12 +12,7 @@ function Reviews() {
       <Layout secondaryPage>
         <Row>
           <Col md={12}>
-            <h1
-              className="main-h1"
-              style={{
-                marginBottom: 50,
-              }}
-            >
+            <h1 className="main-h1" style={{ marginBottom: 50 }}>
               Pull request reviews
             </h1>
 
