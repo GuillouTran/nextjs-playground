@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
-import { Col, Row } from 'react-flexbox-grid';
+import {Col, Row} from 'react-flexbox-grid';
 
 import Layout from '../components/Layout';
 
@@ -12,7 +12,8 @@ function Reviews() {
       <Layout secondaryPage>
         <Row>
           <Col md={12}>
-            <h1 className="main-h1" style={{ marginBottom: 50 }}>
+            <h1 className="main-h1" style={{
+    marginBottom: 50 }}>
               Pull request reviews
             </h1>
 
@@ -33,8 +34,8 @@ function Reviews() {
                   <a
                     href="https:/ /
                 github.com "
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
+  target = "_blank"
+  rel="noopener noreferrer nofollow"
                   >
                     GitHub
                   </a>
@@ -51,35 +52,35 @@ function Reviews() {
                   <span className="point">Repository </span>
                   If the repository is private you'll need to add{' '}
                   <a
-                    href="https:/ /
+  href = "https:/ /
   github.com / telmogoncalves
   "
-                    style={{ display: 'inline', margin: 0 }}
-                    target="_blank "
-                    rel=" noopener
+  style = {
+    { display: 'inline', margin: 0 }
+  } target = "_blank "
+  rel = " noopener
   noreferrer nofollow "
-                  >
-                    {' '}
-                    my account
-                  </a>{' '}
+      > {' '} my account<
+            /a>{' '}
                   as a collaborator .
                 </li>
 
-                <li>
-                  <span className="point">Pull Requests</span>Open a pull
+      <li><span className = "point">Pull Requests<
+          /span>Open a pull
                   request and assign it to me so I get notified.Try to keep pull
                   requests short and straight to the point.
                 </li>
 
-                <li>
-                  <span className="point">Timings </span>Keep in mind I might
+      <li><span className = "point">Timings <
+      /span>Keep in mind I might
                   not review pull requests every single day, although if you see
                   that I'm taking too long drop me a message on{' '}
                   <a
                     href="https:/ /
           twitter.com / telmo "
-                    style={{ display: 'inline', margin: 0 }}
-                    target="_blank"
+  style = {
+    { display: 'inline', margin: 0 }
+  } target = "_blank"
                     rel="noopener noreferrer nofollow"
                   >
                     Twitter
@@ -113,10 +114,10 @@ function Reviews() {
 
 Reviews.getInitialProps = () => {
   return {
-    data: {
-      og: {
-        description: 'Need feedback on a pull request?',
-        image: 'https://telmo.im/og/reviews.png'
+    data : {
+      og : {
+        description : 'Need feedback on a pull request?',
+        image : 'https://telmo.im/og/reviews.png'
       }
     }
   };

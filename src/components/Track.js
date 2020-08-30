@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Text, useColorMode } from '@chakra-ui/core';
+import {Box, Link, Stack, Text, useColorMode} from '@chakra-ui/core';
 import React from 'react';
 
 const Track = track => {
