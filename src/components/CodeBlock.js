@@ -1,3 +1,9 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-plusplus */
+/* eslint-disable radix */
+/* eslint-disable react/button-has-type */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-access-state-in-setstate */
 import React, { PureComponent } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Check, Copy } from "react-feather";
@@ -30,14 +36,6 @@ class CodeBlock extends PureComponent {
     };
   }
 
-  copyToClipboard = () => {
-    this.setState({ ...this.state, copiedToClipboard: true }, () => {
-      setTimeout(() => {
-        this.setState({ ...this.state, copiedToClipboard: false });
-      }, 3500);
-    });
-  };
-
   componentDidMount() {
     const { language } = this.props;
     const linesObj = language && language.split(":")[1];
@@ -45,11 +43,7 @@ class CodeBlock extends PureComponent {
     if (linesObj) {
       const splittedValues = linesObj.split(",");
       let stateLabel;
-      let linesToUpdate = {
-        removeLines: [],
-        addLines: [],
-        updateLines: [],
-      };
+      const linesToUpdate = { removeLines: [], addLines: [], updateLines: [] };
 
       splittedValues.map((lines) => {
         const linesRange = lines.split(",");
@@ -91,6 +85,14 @@ class CodeBlock extends PureComponent {
       });
     }
   }
+
+  copyToClipboard = () => {
+    this.setState({ ...this.state, copiedToClipboard: true }, () => {
+      setTimeout(() => {
+        this.setState({ ...this.state, copiedToClipboard: false });
+      }, 3500);
+    });
+  };
 
   toggleCopyButton = () => {
     this.setState({

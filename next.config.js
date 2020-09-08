@@ -4,6 +4,7 @@ const withSourceMaps = require("@zeit/next-source-maps")();
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
+
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
   SENTRY_ORG,
@@ -24,9 +25,7 @@ process.env.SENTRY_DSN = SENTRY_DSN;
 const basePath = "";
 
 module.exports = withSourceMaps({
-  serverRuntimeConfig: {
-    rootDir: __dirname,
-  },
+  serverRuntimeConfig: { rootDir: __dirname },
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
     // @sentry/node will run in a Node.js environment. @sentry/node will use
@@ -43,6 +42,7 @@ module.exports = withSourceMaps({
     // So ask Webpack to replace @sentry/node imports with @sentry/browser when
     // building the browser's bundle
     if (!options.isServer) {
+      // eslint-disable-next-line no-param-reassign
       config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
 
@@ -81,56 +81,8 @@ module.exports = withCSS(
   withSass(
     withTM({
       transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
-        return config;
-      },
-    })
-  )
-);
-
-module.exports = withCSS(
-  withSass(
-    withTM({
-      transpileModules: ["react-flexbox-grid", "react-syntax-highlighter"],
-      webpack: function (config) {
-        config.module.rules.push({
-          test: /\.md$/,
-          use: "raw-loader",
-        });
+      webpack(config) {
+        config.module.rules.push({ test: /\.md$/, use: "raw-loader" });
         return config;
       },
     })

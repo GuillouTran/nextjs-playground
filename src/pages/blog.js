@@ -1,3 +1,6 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import matter from "gray-matter";
 import Link from "next/link";
 import React from "react";

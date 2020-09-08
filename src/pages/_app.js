@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import "../styles/base.css";
 
 import { ThemeProvider } from "@chakra-ui/core";
@@ -60,7 +61,7 @@ function MyApp({ Component, pageProps }) {
           src="https:/ /
       platform.twitter.com / widgets.js "
           charSet="utf-8"
-        ></script>
+        />
         <title>{title || `GuillouTran: code & opinion`}</title>
       </Head>
 

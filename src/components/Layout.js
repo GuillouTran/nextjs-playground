@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "react-feather";
@@ -6,26 +7,11 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 import { currentDayName } from "../utils/dateUtils";
 
 const menu = [
-  {
-    path: "/",
-    name: "dash",
-  },
-  {
-    path: "/blog",
-    name: "blog",
-  },
-  {
-    path: "/about",
-    name: "about",
-  },
-  {
-    path: "/uses",
-    name: "uses",
-  },
-  {
-    path: "/reviews",
-    name: "reviews",
-  },
+  { path: "/", name: "dash" },
+  { path: "/blog", name: "blog" },
+  { path: "/about", name: "about" },
+  { path: "/uses", name: "uses" },
+  { path: "/reviews", name: "reviews" },
 ];
 
 function Layout({ children, isBlog, secondaryPage, noHead = false }) {
@@ -86,6 +72,7 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
 
           <Col xs={2} style={{ textAlign: "right" }}>
             <button
+              type="button"
               className="theme-switch-button"
               onClick={() => switchTheme()}
             >
@@ -100,7 +87,7 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
           <Col {...containerProps}>
             {!secondaryPage && (
               <h1
-                className={`blog-title`}
+                className="blog-title"
                 style={
                   isBlog && {
                     textAlign: "left",

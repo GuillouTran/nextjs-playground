@@ -1,3 +1,8 @@
+/* eslint-disable react/display-name */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
+
 import matter from "gray-matter";
 import Link from "next/link";
 import React from "react";

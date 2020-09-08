@@ -1,15 +1,18 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import { config } from "react-spring";
 
+import Icon from "../components/Icon";
+import Layout from "../components/Layout";
+import { PRESENT, SKILLS } from "../constants/Stack";
+
 const TextTransition = dynamic(() => import("react-text-transition"), {
   ssr: false,
 });
-
-import Layout from "../components/Layout";
-import Icon from "../components/Icon";
-import { PRESENT, SKILLS } from "../constants/Stack";
 
 function About() {
   const [index, setIndex] = useState(0);
@@ -47,7 +50,7 @@ function About() {
               </Col>
             </Row>
             <hr />
-            <h3>What I've worked with so far</h3>{" "}
+            <h3>What I 've worked with so far</h3>{" "}
             <Row style={{ marginTop: 30 }}>
               {" "}
               {PRESENT.map((s) => (
