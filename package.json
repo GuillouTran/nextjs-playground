@@ -50,7 +50,7 @@
     "react-text-transition": "^1.1.2",
     "reading-time": "^1.2.0",
     "simple-icons": "^3.7.0",
-    "swr": "^0.3.2"
+    "swr": "^0.3.5"
   },
   "devDependencies": {
     "babel-plugin-css-modules-transform": "1.6.2"
