@@ -23,7 +23,7 @@
     "@sentry/webpack-plugin": "^1.13.0",
     "@testing-library/dom": "^7.24.1",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.0.0",
+    "@testing-library/react": "^11.1.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-source-maps": "0.0.4-canary.1",
