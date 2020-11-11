@@ -19,7 +19,7 @@
     "@sentry/integrations": "^5.27.3",
     "@sentry/node": "^5.27.3",
     "@sentry/react": "^5.27.3",
-    "@sentry/tracing": "^5.26.0",
+    "@sentry/tracing": "^5.27.3",
     "@sentry/webpack-plugin": "^1.13.0",
     "@testing-library/dom": "^7.26.3",
     "@testing-library/jest-dom": "^5.11.5",
