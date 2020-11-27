@@ -48,7 +48,7 @@
     "react-scroll-progress-bar": "^1.1.12",
     "react-syntax-highlighter": "^15.3.0",
     "react-text-transition": "^1.1.2",
-    "reading-time": "^1.2.0",
+    "reading-time": "^1.2.1",
     "simple-icons": "^3.12.2",
     "swr": "^0.3.8"
   },
