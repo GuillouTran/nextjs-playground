@@ -2,7 +2,7 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "header": [
+  "headers": [
     {
       "source": "/api/now-playing",
       "headers": [
