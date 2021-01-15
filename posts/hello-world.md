@@ -6,7 +6,7 @@ og:
   image: "https://telmo.im/images/paceholder.jpg"
 author:
   twitter: "guilloutran"
-  name: "Nghia Guillou"
+  name: "Nghia Tran"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
