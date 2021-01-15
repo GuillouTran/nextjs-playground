@@ -107,7 +107,7 @@ function Layout({ children, isBlog, secondaryPage, noHead = false }) {
                   }
                 }
               >
-                Guilloutran, code<span className="amp">& </span> things!
+                Nghia, code<span className="amp">& </span> things!
               </h1>
             )}
 

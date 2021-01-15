@@ -27,7 +27,7 @@ function About() {
         <div style={{ marginTop: 50 }}>
           {" "}
           <h1 className="main-h1 about-h1">
-            Telmo{" "}
+            Nghia{" "}
             <TextTransition
               text={SKILLS[index % SKILLS.length]}
               springConfig={config.gentle}
