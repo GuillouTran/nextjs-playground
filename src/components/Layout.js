@@ -22,10 +22,6 @@ const menu = [
     path: "/uses",
     name: "uses",
   },
-  {
-    path: "/reviews",
-    name: "reviews",
-  },
 ];
 
 function Layout({ children, isBlog, secondaryPage, noHead = false }) {
