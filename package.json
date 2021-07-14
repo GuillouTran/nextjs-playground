@@ -21,7 +21,7 @@
     "@sentry/react": "^5.30.0",
     "@sentry/tracing": "^5.30.0",
     "@sentry/webpack-plugin": "^1.16.0",
-    "@testing-library/dom": "^7.31.2",
+    "@testing-library/dom": "^8.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@zeit/next-css": "^1.0.1",
